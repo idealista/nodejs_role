@@ -1,0 +1,35 @@
+---
+
+- name: NODEJS | Installing dependencies
+  apt:
+    pkg: "{{ item }}"
+    state: present
+  with_items: "{{ nodejs_required_libs }}"
+  tags:
+    skip_ansible_lint
+
+- name: NODEJS | Check node version
+  command: node -v
+  register: nodejs_check
+  changed_when: false
+  ignore_errors: true
+
+- name: NODEJS | Ensure paths
+  file:
+    dest: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ nodejs_root_path }}"
+    - "{{ nodejs_tmp }}"
+
+- name: NODEJS | Install Node.js from sources
+  include: install-sources.yml
+  when:
+    - nodejs_installation_mode == "src"
+    - nodejs_force_reinstall or nodejs_check|failed or 'v'+nodejs_version not in nodejs_check.stdout
+
+- name: NODEJS | Install Node.js from binaries
+  include: install-binaries.yml
+  when:
+    - nodejs_installation_mode == "bin"
+    - nodejs_force_reinstall or nodejs_check|failed or 'v'+nodejs_version not in nodejs_check.stdout

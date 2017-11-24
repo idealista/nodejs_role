@@ -1,0 +1,11 @@
+command:
+  node -v:
+    exit-status: 0
+    stdout:
+      - v{{ nodejs_version }}
+    stderr: []
+    timeout: 10000
+  npm -v:
+    exit-status: 0
+    stderr: []
+    timeout: 10000
