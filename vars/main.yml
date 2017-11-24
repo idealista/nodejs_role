@@ -1,0 +1,10 @@
+nodejs_required_libs:
+  - build-essential
+
+nodejs_binaries_package: "node-v{{ nodejs_version }}-{{ nodejs_binaries_distribution }}.tar.xz"
+nodejs_sources_package: "node-v{{ nodejs_version }}.tar.gz"
+
+nodejs_sources_url: "https://nodejs.org/dist/v{{ nodejs_version }}/{{ nodejs_sources_package }}"
+nodejs_binaries_url: "https://nodejs.org/dist/v{{ nodejs_version }}/{{ nodejs_binaries_package }}"
+
+nodejs_tmp: /buildnodejs

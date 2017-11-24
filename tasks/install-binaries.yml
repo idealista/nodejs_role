@@ -1,0 +1,29 @@
+---
+
+- name: NODEJS | Download binaries package
+  get_url:
+    url: "{{ nodejs_binaries_url }}"
+    dest: "{{ nodejs_tmp }}"
+
+- name: NODEJS | Extract binaries package
+  unarchive:
+    copy: no
+    src: "{{ nodejs_tmp }}/{{ nodejs_binaries_package }}"
+    dest: "{{ nodejs_tmp }}"
+
+- name: NODEJS | Copy binary
+  command: "cp -R {{ nodejs_tmp }}/node-v{{ nodejs_version }}-{{ nodejs_binaries_distribution }}/. {{ nodejs_root_path }}/"
+  tags:
+    skip_ansible_lint
+
+- name: NODEJS | Link node binary
+  file:
+    src: "{{ nodejs_root_path }}/bin/node"
+    dest: "/usr/bin/node"
+    state: link
+
+- name: NODEJS | Link npm binary
+  file:
+    src: "{{ nodejs_root_path }}/bin/npm"
+    dest: "/usr/bin/npm"
+    state: link

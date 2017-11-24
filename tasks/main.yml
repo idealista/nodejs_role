@@ -1,0 +1,6 @@
+---
+
+- name: NODEJS | Install
+  include: install.yml
+  tags:
+    - install
