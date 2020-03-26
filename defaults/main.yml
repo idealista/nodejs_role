@@ -1,17 +1,19 @@
 ---
 ## General
 
-nodejs_version: 8.9.1
+nodejs_version: 12.4.0
+nodejs_user: root
+nodejs_group: root
 
 # Install from binaries or sources
-nodejs_installation_mode: bin #[bin, src]
+nodejs_installation_mode: bin  # [bin, src]
 
 ## Binary distribution
 ## Check https://nodejs.org/es/download/ for binary distribution options
 nodejs_binaries_distribution: linux-x64
 
 # Files & Paths
-nodejs_root_path: /opt/nodejs
+nodejs_install_path: /opt/nodejs
 
 
 ## Miscellaneous
