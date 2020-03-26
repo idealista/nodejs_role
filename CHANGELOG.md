@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased]
 
-## [1.1.0] - 2019-10-31
+## [1.1.0] - 2020-03-26
 
 ### Added
 - *[#3](https://github.com/idealista/nodejs-role/issues/3) Link to global bin the npx script* @jmonterrubio
