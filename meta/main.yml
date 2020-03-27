@@ -1,13 +1,14 @@
 ---
 galaxy_info:
-  company: Idealista S.A.
+  company: Idealista S.A.U.
   description: Node.js JavaScript runtime
-  min_ansible_version: 2.3.1.0
+  min_ansible_version: 2.8.6
   license: Apache 2.0
   platforms:
     - name: Debian
       versions:
         - stretch
+        - buster
   categories:
     - JavaScript
     - runtime

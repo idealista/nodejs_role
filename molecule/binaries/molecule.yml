@@ -1,0 +1,36 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+platforms:
+  - name: node-stretch
+    hostname: node
+    image: ${MOLECULE_DISTRO:-debian:buster-slim}
+    privileged: false
+    capabilities:
+      - SYS_ADMIN
+    volumes:
+      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+    tmpfs:
+      - '/run'
+      - '/run/lock'
+    groups:
+      - node
+    command: '/lib/systemd/systemd'
+    stop_signal: 'RTMIN+3'
+
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+
+scenario:
+  name: binaries
+
+verifier:
+  name: goss
+  lint:
+    name: yamllint

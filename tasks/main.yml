@@ -3,4 +3,4 @@
 - name: NODEJS | Install
   include: install.yml
   tags:
-    - install
+    - node_install
