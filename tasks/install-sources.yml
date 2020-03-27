@@ -1,18 +1,16 @@
 ---
 
-- name: NODEJS | Download sources package
-  get_url:
-    url: "{{ nodejs_sources_url }}"
-    dest: "{{ nodejs_tmp }}"
-
 - name: NODEJS | Extract sources package
   unarchive:
-    copy: no
-    src: "{{ nodejs_tmp }}/{{ nodejs_sources_package }}"
-    dest: "{{ nodejs_tmp }}"
+    src: "{{ nodejs_sources_url }}"
+    dest: "{{ nodejs_install_path }}"
+    extra_opts: ['--strip-components=1']
+    remote_src: true
+    owner: "{{ nodejs_user }}"
+    group: "{{ nodejs_group }}"
 
 - name: NODEJS | Build sources
-  command: "chdir={{ nodejs_tmp }}/node-v{{ nodejs_version }} {{item}}"
+  command: "chdir={{ nodejs_install_path }} {{item}}"
   with_items:
     - ./configure
     - make
@@ -20,19 +18,20 @@
   tags:
     skip_ansible_lint
 
-- name: NODEJS | Copy files
-  command: "cp -R {{ nodejs_tmp }}/node-v{{ nodejs_version }}/. {{ nodejs_root_path }}/"
-  tags:
-    skip_ansible_lint
-
 - name: NODEJS | Link node binary
   file:
-    src: "{{ nodejs_root_path }}/out/Release/node"
+    src: "{{ nodejs_install_path }}/out/Release/node"
     dest: "/usr/bin/node"
     state: link
 
 - name: NODEJS | Link npm binary
   file:
-    src: "{{ nodejs_root_path }}/deps/npm/bin/npm"
+    src: "{{ nodejs_install_path }}/deps/npm/bin/npm"
     dest: "/usr/bin/npm"
+    state: link
+
+- name: NODEJS | Link npx binary
+  file:
+    src: "{{ nodejs_install_path }}/deps/npm/bin/npx"
+    dest: "/usr/bin/npx"
     state: link

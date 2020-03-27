@@ -22,16 +22,16 @@ These instructions will get you a copy of the role for your ansible playbook. On
 
 ### Prerequisities
 
-Ansible 2.3.1.0 version installed.
+Ansible 2.8.6 version installed.
 Inventory destination should be a Debian environment.
 
-For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Docker](https://www.docker.com/) and [Vagrant](https://www.vagrantup.com/) as driver (with [landrush](https://github.com/vagrant-landrush/landrush) plugin) and [VirtualBox](https://www.virtualbox.org/) as provider.
+For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Docker](https://www.docker.com/) as driver.
 
 ### Installing
 
 Create or add to your roles dependency file (e.g requirements.yml):
 
-```
+```yml
 - src: idealista.nodejs-role
   version: 1.0.0
   name: nodejs
@@ -39,13 +39,13 @@ Create or add to your roles dependency file (e.g requirements.yml):
 
 Install the role with ansible-galaxy command:
 
-```
+```sh
 ansible-galaxy install -p roles -r requirements.yml -f
 ```
 
 Use in a playbook:
 
-```
+```yml
 - hosts: someserver
   roles:
     - role: nodejs
@@ -60,16 +60,17 @@ Default version always is LTS. Feel free to choose another version if you prefer
 ## Testing
 
 ```sh
-molecule test
+pipenv install -r test-requirements.txt
+pipenv run molecule test
 ```
 
 ## Built With
 
-![Ansible](https://img.shields.io/badge/ansible-2.3.1.0-green.svg)
+![Ansible](https://img.shields.io/badge/ansible-2.8.6-green.svg)
 
-![Molecule](https://img.shields.io/badge/molecule-1.25.0-green.svg)
+![Molecule](https://img.shields.io/badge/molecule-2.22.0-green.svg)
 
-![Goss](https://img.shields.io/badge/goss-0.3.5-green.svg)
+![Goss](https://img.shields.io/badge/goss-0.3.10-green.svg)
 
 
 ## Versioning
@@ -86,9 +87,9 @@ See also the list of [contributors](https://github.com/idealista/nodejs-role/con
 
 ## License
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Apache 2.0 License](https://img.shields.io/hexpm/l/plug.svg)
 
-This project is licensed under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) license - see the [LICENSE](LICENSE.txt) file for details.
+This project is licensed under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) license - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
