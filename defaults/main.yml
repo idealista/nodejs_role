@@ -19,3 +19,4 @@ nodejs_install_path: /opt/nodejs
 ## Miscellaneous
 # Set true to force the download and installation of the package
 nodejs_force_reinstall: false
+nodejs_install_npx: true

@@ -4,10 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased]
 
+- *[#11](https://github.com/idealista/nodejs_role/issues/11) Make npx installation optional* @blalop
+- *Upgrade to molecule 3* @ablopez
+
 ## [1.1.0] - 2020-03-26
 
 ### Added
-- *[#3](https://github.com/idealista/nodejs-role/issues/3) Link to global bin the npx script* @jmonterrubio
+- *[#3](https://github.com/idealista/nodejs_role/issues/3) Link to global bin the npx script* @jmonterrubio
 - Updated molecule testing
 
 ## [1.0.0]
@@ -15,5 +18,5 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 - *First release* @jmonterrubio
 
 
-[Unreleased]: https://github.com/idealista/nodejs-role/tree/develop
-[1.0.0]: https://github.com/idealista/nodejs-role/tree/1.0.0
+[Unreleased]: https://github.com/idealista/nodejs_role/tree/develop
+[1.0.0]: https://github.com/idealista/nodejs_role/tree/1.0.0

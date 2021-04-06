@@ -1,6 +1,6 @@
-![Logo](https://raw.githubusercontent.com/idealista/nodejs-role/master/logo.gif)
+![Logo](https://raw.githubusercontent.com/idealista/nodejs_role/master/logo.gif)
 
-[![Build Status](https://travis-ci.org/idealista/nodejs-role.svg?branch=master)](https://travis-ci.org/idealista/nodejs-role)
+[![Build Status](https://travis-ci.com/idealista/nodejs_role.svg?branch=master)](https://travis-ci.com/idealista/nodejs_role)
 # Node.js Ansible role
 
 This ansible role installs Node.js runtime in a debian environment.
@@ -32,8 +32,8 @@ For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Docker]
 Create or add to your roles dependency file (e.g requirements.yml):
 
 ```yml
-- src: idealista.nodejs-role
-  version: 1.0.0
+- src: idealista.nodejs_role
+  version: 1.1.0
   name: nodejs
 ```
 
@@ -75,7 +75,7 @@ pipenv run molecule test
 
 ## Versioning
 
-For the versions available, see the [tags on this repository](https://github.com/idealista/nodejs-role/tags).
+For the versions available, see the [tags on this repository](https://github.com/idealista/nodejs_role/tags).
 
 Additionaly you can see what change in each version in the [CHANGELOG.md](CHANGELOG.md) file.
 
@@ -83,7 +83,7 @@ Additionaly you can see what change in each version in the [CHANGELOG.md](CHANGE
 
 * **Idealista** - *Work with* - [idealista](https://github.com/idealista)
 
-See also the list of [contributors](https://github.com/idealista/nodejs-role/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/idealista/nodejs_role/contributors) who participated in this project.
 
 ## License
 
