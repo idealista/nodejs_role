@@ -17,4 +17,10 @@
   with_items:
     - node
     - npm
-    - npx
+
+- name: NODEJS | Link npx binary
+  file:
+    src: "{{ nodejs_install_path }}/bin/npx"
+    dest: "/usr/bin/npx"
+    state: link
+  when: nodejs_install_npx

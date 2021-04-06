@@ -5,6 +5,10 @@ dependency:
 driver:
   name: docker
 
+lint: |
+  yamllint .
+  ansible-lint .
+
 platforms:
   - name: node-stretch
     hostname: node
@@ -24,13 +28,10 @@ platforms:
 
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
 
 scenario:
   name: sources
 
 verifier:
-  name: goss
-  lint:
-    name: yamllint
+  name: ansible
+  directory: ./tests

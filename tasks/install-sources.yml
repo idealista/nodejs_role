@@ -10,7 +10,7 @@
     group: "{{ nodejs_group }}"
 
 - name: NODEJS | Build sources
-  command: "chdir={{ nodejs_install_path }} {{item}}"
+  command: "chdir={{ nodejs_install_path }} {{ item }}"
   with_items:
     - ./configure
     - make
@@ -35,3 +35,4 @@
     src: "{{ nodejs_install_path }}/deps/npm/bin/npx"
     dest: "/usr/bin/npx"
     state: link
+  when: nodejs_install_npx
