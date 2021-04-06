@@ -1,2 +1,5 @@
+---
+
 nodejs_version: 12.0.0
 nodejs_installation_mode: src
+nodejs_install_npx: true
