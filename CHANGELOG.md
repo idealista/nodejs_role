@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a changelog](https://github.com/olivierlacan/keep-a-changelog).
 
 ## [Unreleased]
+### Fixed
+- * [#16](https://github.com/idealista/nodejs_role/pull/16) Replaces deprecated `include` module by `include_tasks` @devnix
 
 ## [1.2.0] - 2021-04-06
 ### Added
