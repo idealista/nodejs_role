@@ -1,6 +1,6 @@
 ---
 
 - name: NODEJS | Install
-  include: install.yml
+  include_tasks: install.yml
   tags:
     - node_install

@@ -6,10 +6,10 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-ansible = "==2.9.14"
-molecule = "==3.0.4"
-docker = "==4.1.0"
-ansible-lint = "==4.2.0"
+ansible-core = "*"
+ansible-lint = "*"
+molecule = "*"
+molecule-plugins = {version = "*", extras = ["docker"]}
 
 [requires]
-python_version = "3"
+python_version = "3.10"
