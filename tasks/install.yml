@@ -19,13 +19,13 @@
     - "{{ nodejs_install_path }}"
 
 - name: NODEJS | Install Node.js from sources
-  include: install-sources.yml
+  include_tasks: install-sources.yml
   when:
     - nodejs_installation_mode == "src"
     - nodejs_force_reinstall or nodejs_check is failed or 'v'+nodejs_version not in nodejs_check.stdout
 
 - name: NODEJS | Install Node.js from binaries
-  include: install-binaries.yml
+  include_tasks: install-binaries.yml
   when:
     - nodejs_installation_mode == "bin"
     - nodejs_force_reinstall or nodejs_check is failed or 'v'+nodejs_version not in nodejs_check.stdout
